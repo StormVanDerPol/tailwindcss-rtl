@@ -3,16 +3,16 @@ const nameClass = require("./util/nameClass.js");
 module.exports = (theme) => {
   const generators = [
     ([modifier, size]) => ({
-      ['html[dir="rtl"] ' + nameClass("start", modifier)]: {
+      ['[dir="rtl"] ' + nameClass("start", modifier)]: {
         right: size,
       },
-      ['html[dir="rtl"] ' + nameClass("end", modifier)]: {
+      ['[dir="rtl"] ' + nameClass("end", modifier)]: {
         left: size,
       },
-      ['html:not([dir="rtl"]) ' + nameClass("end", modifier)]: {
+      ['[dir="ltr"] ' + nameClass("end", modifier)]: {
         right: size,
       },
-      ['html:not([dir="rtl"]) ' + nameClass("start", modifier)]: {
+      ['[dir="ltr"] ' + nameClass("start", modifier)]: {
         left: size,
       },
     }),
